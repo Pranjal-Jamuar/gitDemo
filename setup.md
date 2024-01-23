@@ -1,4 +1,6 @@
-#### JSON file setup for C++ to use "input.txt" and "output.txt" for inputs and outputs :
+### JSON file setup for C++ to use "input.txt" and "output.txt" for inputs and outputs :
+
+##### For C++ :
 
 ```
 {
@@ -21,6 +23,38 @@
       }
     }
   ]
+}
+```
+
+##### For JS :
+
+```
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run JavaScript with Input/Output",
+            "type": "shell",
+            "command": "node",
+            "args": [
+                "${file}",
+                "<",
+                "input.txt",
+                ">",
+                "output.txt"
+            ],
+            "presentation": {
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
 }
 ```
 
